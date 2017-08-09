@@ -1,6 +1,6 @@
 ## Synopsis
 
-This is a small circuit-breaker framework implementing circuit breaker design patter. Generate the javadoc to look into its details. Refer to https://martinfowler.com/bliki/CircuitBreaker.html
+This is a small circuit-breaker framework implementing circuit breaker design pattern. Generate the javadoc to look into its details. Refer to https://martinfowler.com/bliki/CircuitBreaker.html for more detail understanding.
 
 ## Design
 ![Optional Text](image.jpg)
