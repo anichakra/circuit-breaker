@@ -2,6 +2,9 @@
 
 This is a small circuit-breaker framework implementing circuit breaker design patter. Generate the javadoc to look into its details. Refer to https://martinfowler.com/bliki/CircuitBreaker.html
 
+## Design
+![Optional Text](image.jpg)
+
 ## API Details
 
 The framework contains set of interfaces. The key interfaces are Circuit, CircuitBreaker and Command. The Circuit wraps the latter two. When a Command that encapsulate a remote service call fails repeatedly and crosses a threshold in a given time, the circuit breaker trips the circuit and bypass all calls to the remote service to another fallback path. Meanwhile it watches till the external system is healthy again. When the external system is up, then the circuit is again restored. 
