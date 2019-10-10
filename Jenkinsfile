@@ -20,7 +20,7 @@ node {
       stage('JAR Installation') {
         println "########## Installing jar files in local maven repository ##########"
         docker.image(MAVEN_IMAGE).inside(MAVEN_VOLUME) {
-          sh('mvn clean install')
+          sh('mvn clean install -Dmaven.test.skip=true')
         }
       }
     } catch(e) {
