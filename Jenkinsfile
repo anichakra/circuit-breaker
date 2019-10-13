@@ -23,6 +23,13 @@ node {
           sh('mvn clean install -Dmaven.test.skip=true')
         }
       }
+      
+      stage('JAR Deploy') {
+        println "########## Installing jar files in local maven repository ##########"
+        docker.image(MAVEN_IMAGE).inside(MAVEN_VOLUME) {
+          sh('mvn deploy -DskipTests -Dmaven.install.skip=true')
+        }
+      }
     } catch(e) {
       println "Err: Incremental Build failed with Error: " + e.toString()
       currentBuild.result = 'FAILED'
