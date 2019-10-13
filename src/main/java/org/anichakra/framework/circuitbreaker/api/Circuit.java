@@ -16,6 +16,7 @@ package org.anichakra.framework.circuitbreaker.api;
  * @param <K>
  * @param <V>
  */
+
 public interface Circuit<K, V> {
 
 	/**
