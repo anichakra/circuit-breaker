@@ -6,7 +6,7 @@ node {
   ws("workspace/${env.JOB_NAME}/${env.BRANCH_NAME}") {
     try {      
       // Docker image details - might not be required to be changed often    
-      def MAVEN_IMAGE    = "maven:3-jdk-11"
+      def MAVEN_IMAGE    = "maven:3.6.2-amazoncorretto-11"
       def MAVEN_VOLUME   = "-v maven-repo/.m2:/root/.m2"
     
       sh('printenv | sort')
@@ -26,9 +26,9 @@ node {
       
       stage('JAR Deploy') {
         println "########## Installing jar files in local maven repository ##########"
-        docker.image(MAVEN_IMAGE).inside(MAVEN_VOLUME) {
-          sh('mvn deploy -DskipTests -Dmaven.install.skip=true')
-        }
+        //docker.image(MAVEN_IMAGE).inside(MAVEN_VOLUME) {
+      //    sh('mvn deploy -DskipTests -Dmaven.install.skip=true')
+     //   }
       }
     } catch(e) {
       println "Err: Incremental Build failed with Error: " + e.toString()
